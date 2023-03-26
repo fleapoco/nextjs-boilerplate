@@ -7,7 +7,7 @@ export interface IGlobalReduxState {
 }
 
 export interface IFetchAPICall {
-  method?: "GET" | "POST" | "PUT" | "DELETE";
+  method?: "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
   data?: any;
 }
 

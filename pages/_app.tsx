@@ -1,21 +1,20 @@
-import Head from "next/head";
 import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
 import { store } from "../redux";
 import { Toaster } from "react-hot-toast";
 import "../styles/globals.scss";
+import { useEffect } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const AnyComponent = Component as any;
+  const BaseComponent = Component as any;
+
+  useEffect(() => {
+    const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    if (iOS) document.body.classList.add("ios");
+  }, []);
+
   return (
     <>
-      <Head>
-        <meta
-          name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
-        />
-        <title>BeatFantasy</title>
-      </Head>
       <Provider store={store}>
         <Toaster
           position="top-center"
@@ -32,7 +31,7 @@ export default function App({ Component, pageProps }: AppProps) {
             error: { style: { background: "#b33234", color: "#fff" } }
           }}
         />
-        <AnyComponent {...pageProps} />
+        <BaseComponent {...pageProps} />
       </Provider>
     </>
   );

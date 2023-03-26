@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
-import { BASE_URL } from "../hooks/useAPI";
+import { API_BASE_URL } from "../utils";
 import { IPageProps } from "../types";
 import Landing from "../components/pages/Landing";
 import NotFound from "../components/pages/NotFound";
@@ -15,7 +15,7 @@ export async function getServerSideProps({ req, params }: { res: any; req: any; 
   try {
     // Do some api call to validate
     // const cookies = new Cookies(req.headers.cookie);
-    // const raw = await fetch(`${BASE_URL}/validate`);
+    // const raw = await fetch(`${API_BASE_URL}/validate`);
     // const response = await raw.json();
     // return { props: response };
     return { props: { status: true } };

@@ -1,10 +1,8 @@
 import fetch from "node-fetch";
 import { useDispatch } from "react-redux";
 import { setLoading } from "../redux/reducers/global";
-import { getToken } from "../utils";
+import { API_BASE_URL, getToken } from "../utils";
 import { IFetchAPICall } from "../types";
-
-export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 const useAPI = () => {
   const dispatch = useDispatch();
@@ -12,7 +10,7 @@ const useAPI = () => {
   const http = async (path: string, options?: IFetchAPICall) => {
     dispatch(setLoading(true));
     const token = getToken();
-    const url = `${BASE_URL}/${path.replace(/^\/+/, "")}`;
+    const url = `${API_BASE_URL}/${path.replace(/^\/+/, "")}`;
     try {
       const raw = await fetch(url, {
         headers: {
