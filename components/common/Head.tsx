@@ -19,7 +19,7 @@ export const Head: React.FC<Props> = (props) => {
       />
       {children}
       <title>{title ?? "NextJs Site"}</title>
-      <meta content={description ?? "NextJs Site"} name="description" />
+      <meta name="description" content={description ?? "NextJs Site"} />
     </NextHead>
   );
 };

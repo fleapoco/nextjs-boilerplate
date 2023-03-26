@@ -58,8 +58,8 @@ export default function Document() {
         <meta name="msapplication-square70x70logo" content="/images/logo/logo-70x70.png" />
         {/* <link rel="mask-icon" href="/images/logo/mask-logo.svg" color="#000000" /> */}
 
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="msapplication-TileColor" content={AppConfig.theme_color} />
+        <meta name="theme-color" content={AppConfig.theme_color} />
 
         <link rel="manifest" href="/manifest.json" />
 
