@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
-import { API_BASE_URL, getToken } from "../utils";
-import { IFetchAPICall } from "../types";
+import { API_BASE_URL } from "@utils/index";
+import { IFetchAPICall } from "@interface/index";
 
 const http = async (path: string, options?: IFetchAPICall) => {
   const url = `${API_BASE_URL}/${path.replace(/^\/+/, "")}`;

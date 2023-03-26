@@ -1,7 +1,7 @@
 import { io } from "socket.io-client";
-import { getUserState, setEmail } from "../redux/reducers/user";
+import { getUserState, setEmail } from "@store/reducers/user";
 import { useAppDispatch, useAppSelector } from "./useRedux";
-import { SOCKET_BASE_URL, SOCKET_PATH } from "../utils";
+import { SOCKET_BASE_URL, SOCKET_PATH } from "@utils/index";
 import { useEffect } from "react";
 
 const socket = io(SOCKET_BASE_URL, { path: SOCKET_PATH });

@@ -1,8 +1,8 @@
 import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
-import { store } from "../redux";
+import { store } from "@store/index";
 import { Toaster } from "react-hot-toast";
-import "../styles/globals.scss";
+import "@css/globals.scss";
 import { useEffect } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {

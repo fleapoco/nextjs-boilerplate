@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "..";
-import { IUserReduxState } from "../../types";
+import { IUserReduxState } from "@interface/index";
 
 const initialState: IUserReduxState = {
   email: "",

@@ -1,8 +1,8 @@
 import fetch from "node-fetch";
 import { useDispatch } from "react-redux";
-import { setLoading } from "../redux/reducers/global";
-import { API_BASE_URL, getToken } from "../utils";
-import { IFetchAPICall } from "../types";
+import { setLoading } from "@store/reducers/global";
+import { API_BASE_URL, getToken } from "@utils/index";
+import { IFetchAPICall } from "@interface/index";
 
 const useAPI = () => {
   const dispatch = useDispatch();

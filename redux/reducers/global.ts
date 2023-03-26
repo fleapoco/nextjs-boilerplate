@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "..";
-import { IGlobalReduxState } from "../../types";
+import { IGlobalReduxState } from "@interface/index";
 
 const initialState: IGlobalReduxState = {
   loading: false

@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import { GA_TRACKING_ID } from "../utils";
-import { AppConfig } from "../utils";
+import { GA_TRACKING_ID } from "@utils/index";
+import { AppConfig } from "@utils/index";
 declare global {
   interface Window {
     MSStream: unknown;
