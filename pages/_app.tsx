@@ -6,8 +6,6 @@ import "../styles/globals.scss";
 import { useEffect } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const BaseComponent = Component as any;
-
   useEffect(() => {
     const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     if (iOS) document.body.classList.add("ios");
@@ -31,7 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
             error: { style: { background: "#b33234", color: "#fff" } }
           }}
         />
-        <BaseComponent {...pageProps} />
+        <Component {...pageProps} />
       </Provider>
     </>
   );
