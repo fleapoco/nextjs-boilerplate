@@ -1,49 +1,43 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import { GA_TRACKING_ID } from "../utils";
-
+import { AppConfig } from "../utils";
 declare global {
   interface Window {
     MSStream: unknown;
   }
 }
 
-const social_description = "Social Description";
-const site_name = "Site Name";
-const site_url = "https://www.example.com";
-const site_banner_image = "https://www.example.com/images/logo/logo-600x600.png";
-const keywords = "keyword1, keyword2, keyword3";
-
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta property="og:description" content={social_description} />
-        <meta name="twitter:description" content={social_description} />
+        <meta property="og:description" content={AppConfig.description} />
+        <meta name="twitter:description" content={AppConfig.description} />
 
-        <meta property="og:site_name" content={site_name} />
-        <meta name="apple-mobile-web-app-title" content={site_name} />
-        <meta name="application-name" content={site_name} />
-        <meta property="og:title" content={site_name} />
-        <meta name="twitter:title" content={site_name} />
-        <meta property="profile:username" content={site_name} />
+        <meta property="og:site_name" content={AppConfig.site_name} />
+        <meta name="apple-mobile-web-app-title" content={AppConfig.site_name} />
+        <meta name="application-name" content={AppConfig.site_name} />
+        <meta property="og:title" content={AppConfig.site_name} />
+        <meta name="twitter:title" content={AppConfig.site_name} />
 
-        <meta name="keywords" content={keywords} />
+        <meta name="keywords" content={AppConfig.keywords} />
 
-        <meta property="og:url" content={site_url} />
-        <link rel="canonical" href={site_url} />
-        <meta name="twitter:domain" content={site_url} />
+        <meta property="og:url" content={AppConfig.site_url} />
+        <link rel="canonical" href={AppConfig.site_url} />
 
-        <meta property="og:image" content={site_banner_image} />
-        <meta property="og:image:secure_url" content={site_banner_image} />
-        <meta name="twitter:image" content={site_banner_image} />
+        <meta property="og:image" content={AppConfig.social_banner_image} />
+        <meta property="og:image:secure_url" content={AppConfig.social_banner_image} />
+        <meta name="twitter:image" content={AppConfig.social_banner_image} />
+
+        <meta name="twitter:site" content={AppConfig.twitter_handle} />
 
         <meta property="og:image:height" content="600" />
         <meta property="og:image:type" content="image/jpg" />
         <meta property="og:image:width" content="600" />
         <meta property="og:locale" content="en_US" />
 
-        <meta property="og:type" content="profile" />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
 
         {/* Put FB APP ID */}
         {/* <meta content="" property="fb:app_id" /> */}
