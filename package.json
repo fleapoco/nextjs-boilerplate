@@ -1,4 +1,28 @@
 {
+  "name": "nextjs-boilerplate",
+  "version": "0.0.1",
+  "description": "Next.js boilerplate with Redux, TailwindCSS, and more",
+  "main": "index.js",
+  "repository": "https://github.com/fleapoco/nextjs-boilerplate.git",
+  "author": "Fleapo Co.",
+  "license": "ISC",
+  "keywords": [
+    "nextjs",
+    "next",
+    "react",
+    "redux",
+    "tailwindcss",
+    "typescript",
+    "boilerplate",
+    "starter",
+    "template",
+    "nextjs-boilerplate",
+    "nextjs-template",
+    "nextjs-starter",
+    "nextjs-redux",
+    "nextjs-tailwindcss",
+    "nextjs-typescript"
+  ],
   "private": true,
   "scripts": {
     "dev": "next dev",
