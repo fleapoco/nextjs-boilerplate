@@ -6,6 +6,7 @@ import { API_BASE_URL } from "../utils";
 import { IPageProps } from "../types";
 import Landing from "../components/pages/Landing";
 import NotFound from "../components/pages/NotFound";
+import { validate } from "../hooks/httpService";
 
 const Index: NextPage<IPageProps> = ({ status, data }) => {
   return status ? <Landing /> : <NotFound />;
@@ -13,14 +14,12 @@ const Index: NextPage<IPageProps> = ({ status, data }) => {
 
 export async function getServerSideProps({ req, params }: { res: any; req: any; params: any; query: any }) {
   try {
-    // Do some api call to validate
     // const cookies = new Cookies(req.headers.cookie);
-    // const raw = await fetch(`${API_BASE_URL}/validate`);
-    // const response = await raw.json();
-    // return { props: response };
+    // const resp = await validate({ token: cookies.get("token") });
+    // return { props: { status: true, data: resp } };
     return { props: { status: true } };
-  } catch (error) {
-    return { props: { status: false } };
+  } catch (error: any) {
+    return { props: { status: false, message: error.message } };
   }
 }
 

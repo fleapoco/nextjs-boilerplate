@@ -9,9 +9,11 @@ export interface IGlobalReduxState {
 export interface IFetchAPICall {
   method?: "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
   data?: any;
+  token?: string;
 }
 
 export interface IPageProps {
   status: boolean;
   data: any;
+  message?: string;
 }
