@@ -29,7 +29,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install ./.husky"
+    "prepare": "husky install ./.husky",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
@@ -37,6 +38,7 @@
     "eslint-config-next": "^13.2.3",
     "husky": "^8.0.3",
     "next": "latest",
+    "next-sitemap": "^4.0.6",
     "node-fetch": "^3.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
