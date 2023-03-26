@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../../styles/home.module.scss";
+import styles from "@css/home.module.scss";
 
 const Index: React.FC = () => {
   return (

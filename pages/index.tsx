@@ -2,7 +2,6 @@ import { NextPage } from "next";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
-import { API_BASE_URL } from "../utils";
 import { IPageProps } from "../types";
 import Landing from "../components/pages/Landing";
 import NotFound from "../components/pages/NotFound";
