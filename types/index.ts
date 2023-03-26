@@ -1,5 +1,6 @@
 export interface IUserReduxState {
   email: string;
+  _id: string;
 }
 
 export interface IGlobalReduxState {

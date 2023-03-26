@@ -3,7 +3,8 @@ import { RootState } from "..";
 import { IUserReduxState } from "../../types";
 
 const initialState: IUserReduxState = {
-  email: ""
+  email: "",
+  _id: ""
 };
 
 export const userSlice = createSlice({
@@ -12,11 +13,14 @@ export const userSlice = createSlice({
   reducers: {
     setEmail: (state: { email: string }, action: PayloadAction<string>) => {
       state.email = action.payload;
+    },
+    setUserId: (state: { _id: string }, action: PayloadAction<string>) => {
+      state._id = action.payload;
     }
   }
 });
 
-export const { setEmail } = userSlice.actions;
+export const { setEmail, setUserId } = userSlice.actions;
 export const getUserState = (state: RootState) => state.user;
 
 export default userSlice.reducer;
