@@ -62,7 +62,7 @@ export default function Document() {
         <meta name="msapplication-square150x150logo" content="/images/logo/logo-150x150.png" />
         <meta name="msapplication-TileImage" content="/images/logo/logo-144x144.png" />
         <meta name="msapplication-square70x70logo" content="/images/logo/logo-70x70.png" />
-        <link rel="mask-icon" href="/images/logo/mask-logo.svg" color="#000000" />
+        {/* <link rel="mask-icon" href="/images/logo/mask-logo.svg" color="#000000" /> */}
 
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
@@ -78,14 +78,7 @@ export default function Document() {
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
         <script
           dangerouslySetInnerHTML={{
-            __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_TRACKING_ID}', {
-                  page_path:window.location.pathname,
-                });
-              `
+            __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${GA_TRACKING_ID}', {page_path:window.location.pathname});`
           }}
         />
       </Head>
