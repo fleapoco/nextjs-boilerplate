@@ -30,13 +30,17 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install ./.husky",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "format": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
+    "check-types": "tsc --noEmit --pretty",
+    "clean": "rimraf .next out"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
     "eslint": "^8.35.0",
     "eslint-config-next": "^13.2.3",
     "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
     "next": "^13.2.4",
     "next-seo": "^5.15.0",
     "next-sitemap": "^4.0.6",
