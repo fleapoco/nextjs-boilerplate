@@ -105,3 +105,5 @@ dist
 
 yarn.lock
 package-json.json
+/public/*.xml
+/public/robots.txt
