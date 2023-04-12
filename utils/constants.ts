@@ -4,3 +4,6 @@ export const NODE_ENV = process.env.NODE_ENV!;
 export const SOCKET_BASE_URL = process.env.NEXT_PUBLIC_SOCKET_BASE_URL!;
 export const SOCKET_PATH = process.env.NEXT_PUBLIC_SOCKET_PATH!;
 export const SITEDOMAIN = process.env.NEXT_PUBLIC_DOMAIN!;
+export const ONESIGNAL_APP_ID = process.env.ONESIGNAL_APP_ID!;
+export const ONESIGNAL_SAFARI_WEB_ID = process.env.ONESIGNAL_SAFARI_WEB_ID!;
+export const GOOGLE_MAPS_KEY = process.env.GOOGLE_MAPS_KEY!;

@@ -1,14 +1,15 @@
-import type { AppProps } from "next/app";
-import { Provider } from "react-redux";
-import { store } from "@store/index";
-import { Toaster } from "react-hot-toast";
-import "@css/globals.scss";
-import { useEffect } from "react";
+import type { AppProps } from 'next/app';
+import { Provider } from 'react-redux';
+import { store } from '@store/index';
+import { Toaster } from 'react-hot-toast';
+import '@css/globals.scss';
+import { useEffect } from 'react';
+import AppLayout from '@components/layout/AppLayout';
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-    if (iOS) document.body.classList.add("ios");
+    if (iOS) document.body.classList.add('ios');
   }, []);
 
   return (
@@ -21,15 +22,17 @@ export default function App({ Component, pageProps }: AppProps) {
           containerClassName="toaster-wrapper"
           containerStyle={{}}
           toastOptions={{
-            className: "single-toaster",
+            className: 'single-toaster',
             duration: 5000,
             icon: null,
-            style: { background: "#ffc107", color: "#fff" },
-            success: { style: { background: "#2e3a3a", color: "#fff" } },
-            error: { style: { background: "#b33234", color: "#fff" } }
+            style: { background: '#ffc107', color: '#fff' },
+            success: { style: { background: '#2e3a3a', color: '#fff' } },
+            error: { style: { background: '#b33234', color: '#fff' } }
           }}
         />
-        <Component {...pageProps} />
+        <AppLayout>
+          <Component {...pageProps} />
+        </AppLayout>
       </Provider>
     </>
   );

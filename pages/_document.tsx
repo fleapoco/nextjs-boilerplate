@@ -1,6 +1,6 @@
-import { Html, Head, Main, NextScript } from "next/document";
-import { GA_TRACKING_ID } from "@utils/index";
-import { AppConfig } from "@utils/index";
+import { Html, Head, Main, NextScript } from 'next/document';
+import { GA_TRACKING_ID, GOOGLE_MAPS_KEY } from '@utils/index';
+import { AppConfig } from '@utils/index';
 declare global {
   interface Window {
     MSStream: unknown;
@@ -67,7 +67,8 @@ export default function Document() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
           href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap"
-          rel="stylesheet"></link>
+          rel="stylesheet"
+        ></link>
 
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
         <script
@@ -75,6 +76,11 @@ export default function Document() {
             __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${GA_TRACKING_ID}', {page_path:window.location.pathname});`
           }}
         />
+        <script
+          async
+          defer
+          src={`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_KEY}&libraries=places`}
+        ></script>
       </Head>
       <body>
         <Main />

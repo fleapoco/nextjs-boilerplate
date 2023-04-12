@@ -1,8 +1,8 @@
-import { io } from "socket.io-client";
-import { getUserState, setEmail } from "@store/reducers/user";
-import { useAppDispatch, useAppSelector } from "./useRedux";
-import { SOCKET_BASE_URL, SOCKET_PATH } from "@utils/index";
-import { useEffect } from "react";
+import { io } from 'socket.io-client';
+import { getUserState, setEmail } from '@store/reducers/user';
+import { useAppDispatch, useAppSelector } from './useRedux';
+import { SOCKET_BASE_URL, SOCKET_PATH } from '@utils/index';
+import { useEffect } from 'react';
 
 const socket = io(SOCKET_BASE_URL, { path: SOCKET_PATH });
 
@@ -11,29 +11,29 @@ const useSocket = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    socket.on("connect", () => {
+    socket.on('connect', () => {
       if (_id) attachUser(_id);
-      console.log("Socket connected", { _id });
+      console.log('Socket connected', { _id });
     });
 
-    socket.on("disconnect", () => {
-      console.log("Socket disconnected");
+    socket.on('disconnect', () => {
+      console.log('Socket disconnected');
     });
 
-    socket.on("set-email", (email: string) => {
-      console.log("set-email", email);
+    socket.on('set-email', (email: string) => {
+      console.log('set-email', email);
       dispatch(setEmail(email));
     });
 
     return () => {
-      socket.off("connect");
-      socket.off("disconnect");
-      socket.off("paid");
+      socket.off('connect');
+      socket.off('disconnect');
+      socket.off('paid');
     };
   }, [socket, _id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const attachUser = (id: string) => {
-    socket.emit("attachUser", id);
+    socket.emit('attachUser', id);
   };
 
   return { attachUser };

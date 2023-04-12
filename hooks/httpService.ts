@@ -1,19 +1,20 @@
-import fetch from "node-fetch";
-import { API_BASE_URL } from "@utils/index";
-import { IFetchAPICall } from "@interface/index";
+import fetch from 'node-fetch';
+import { API_BASE_URL } from '@utils/index';
+import { IFetchAPICall } from '@interface/index';
 
 const http = async (path: string, options?: IFetchAPICall) => {
-  const url = `${API_BASE_URL}/${path.replace(/^\/+/, "")}`;
+  const url = `${API_BASE_URL}/${path.replace(/^\/+/, '')}`;
   try {
     const raw = await fetch(url, {
       headers: {
         Authorization: `Bearer ${options?.token as string}`,
-        "Content-Type": "application/json"
+        'Content-Type': 'application/json'
       },
-      method: options?.method ?? "GET",
+      method: options?.method ?? 'GET',
       body: options?.data ? JSON.stringify(options?.data) : undefined
     });
-    const data = await raw.json();
+    const data = (await raw.json()) as any;
+    if (!raw.ok) throw new Error(data.message);
     return data;
   } catch (error) {
     throw error;

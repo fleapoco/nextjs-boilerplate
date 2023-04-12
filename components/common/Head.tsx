@@ -1,5 +1,5 @@
-import NextHead from "next/head";
-import React from "react";
+import NextHead from 'next/head';
+import React from 'react';
 
 interface Props {
   title?: string;
@@ -18,8 +18,8 @@ export const Head: React.FC<Props> = (props) => {
         name="viewport"
       />
       {children}
-      <title>{title ?? "NextJs Site"}</title>
-      <meta name="description" content={description ?? "NextJs Site"} />
+      <title>{title ?? 'NextJs Site'}</title>
+      <meta name="description" content={description ?? 'NextJs Site'} />
     </NextHead>
   );
 };

@@ -21,7 +21,8 @@
       "@utils/*": ["./utils/*"],
       "@pages/*": ["./pages/*"],
       "@store/*": ["./redux/*"],
-      "@interface/*": ["./interface/*"]
+      "@interface/*": ["./interface/*"],
+      "@ui/*": ["./ui/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "*.config.js"],
