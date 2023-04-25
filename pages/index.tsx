@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 
 import { IPageProps } from '@interface/index';
-import Landing from '@ui/landing';
+import Landing from '@view/landing';
 import { Head } from '@components/common/Head';
 import { PageConfig } from '@utils/index';
 import PageWrapper from '@components/layout/PageWrapper';

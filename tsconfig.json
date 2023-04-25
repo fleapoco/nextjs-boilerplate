@@ -22,7 +22,7 @@
       "@pages/*": ["./pages/*"],
       "@store/*": ["./redux/*"],
       "@interface/*": ["./interface/*"],
-      "@ui/*": ["./ui/*"]
+      "@view/*": ["./view/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "*.config.js"],
